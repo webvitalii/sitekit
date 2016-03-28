@@ -29,7 +29,18 @@ class Sitekit_Search_Widget extends WP_Widget {
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
 		}
-		echo $instance['button_text'];
+		?>
+		<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="form-inline">
+			<div class="form-group">
+				<fieldset>
+					<div class="input-group">
+						<input type="search" value="<?php echo esc_attr( get_search_query() ); ?>" class="input-medium form-control" name="s">
+					</div>
+					<button type="submit" class="btn btn-primary"><i class="dashicons dashicons-search"></i> <?php echo $instance['button_text']; ?></button>
+				</fieldset>
+			</div>
+		</form>
+		<?php
 		echo $args['after_widget'];
 	}
 
@@ -74,8 +85,8 @@ class Sitekit_Search_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$new_instance = wp_parse_args( (array) $new_instance, self::get_defaults() );
-		$instance['title'] = strip_tags($new_instance['title']);
-		$instance['button_text'] = strip_tags($new_instance['button_text']);
+		$instance['title'] = trim(strip_tags($new_instance['title']));
+		$instance['button_text'] = trim(strip_tags($new_instance['button_text']));
 		return $instance;
 	}
 

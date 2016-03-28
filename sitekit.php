@@ -2,7 +2,7 @@
 /*
 Plugin Name: Sitekit
 Plugin URI: http://wordpress.org/plugins/sitekit/
-Description: Collection with useful tools.
+Description: Collection of useful tools.
 Version: 1.0
 Author: webvitaly
 Text Domain: sitekit
