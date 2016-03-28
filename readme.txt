@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
-All in one
+Plugin adds search and archives widgets.
 
 == Description ==
 
@@ -25,7 +25,7 @@ All in one
 == Changelog ==
 
 = 1.0 - 2016.03.28 =
-* initial release
+* initial release: search and archives widgets
 
 == Installation ==
 
