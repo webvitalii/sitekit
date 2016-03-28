@@ -19,6 +19,7 @@ define('SITEKIT_PLUGIN_VERSION', '1.0');
 
 //include( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'inc/widget-search.php' );
 include( 'inc/sk-widget-search.php' );
+include( 'inc/sk-widget-archives.php' );
 
 
 function sitekit_plugin_row_meta( $links, $file ) {
