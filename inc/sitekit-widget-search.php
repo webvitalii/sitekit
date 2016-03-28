@@ -42,6 +42,7 @@ class Sitekit_Search_Widget extends WP_Widget {
 		</form>
 		<?php
 		echo $args['after_widget'];
+		echo SITEKIT_PLUGIN_POWERED;
 	}
 
 

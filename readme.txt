@@ -22,6 +22,24 @@ Plugin adds search and archives widgets.
 * **[Anti-spam Pro - Block spam in comments](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitalii "Block spam in comments")**
 
 
+== Other Notes ==
+
+= Parameters for [sitekit_archives]: =
+* `[sitekit_archives]` - list of monthly archives links sorted by date;
+* `[sitekit_archives type="yearly"]` - list of yearly archives links;
+* `[sitekit_archives type="monthly"]` - list of monthly archives links;
+* `[sitekit_archives type="weekly"]` - list of weekly archives links;
+* `[sitekit_archives type="daily"]` - list of daily archives links;
+* `[sitekit_archives type="postbypost"]` - list of all posts links sorted by date;
+* `[sitekit_archives type="alpha"]` -  list of all posts links sorted by title;
+* **limit** - how many links to be included in the list: `[sitekit_archives limit="10"]`; by default all links are shown: `[sitekit_archives limit=""]`;
+* **format** - format for the archive: `[sitekit_archives format="option"]` - show as a dropdown; by default unordered list is shown: `[sitekit_archives format="html"]`;
+* **show_post_count** - display counter of posts in the archive: `[sitekit_archives show_post_count="1"]`; by default counter is not shown: `[sitekit_archives show_post_count="0"]`;
+* **order** - how to sort archives links: `[sitekit_archives order="ASC"]`; by default links are sorted by descending order (Z-A): `[sitekit_archives order="DESC"]`;
+
+[sitekit_archives] is based on [wp_get_archives function](https://codex.wordpress.org/Function_Reference/wp_get_archives).
+
+
 == Changelog ==
 
 = 1.0 - 2016.03.28 =

@@ -15,17 +15,18 @@ if ( ! defined( 'ABSPATH' ) ) { // prevent full path disclosure
 }
 
 define('SITEKIT_PLUGIN_VERSION', '1.0');
+define('SITEKIT_PLUGIN_POWERED', "\n".'<!-- Powered by Sitekit plugin v.'.SITEKIT_PLUGIN_VERSION.' wordpress.org/plugins/sitekit/ -->'."\n");
 
 
-//include( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'inc/widget-search.php' );
-include( 'inc/sk-widget-search.php' );
-include( 'inc/sk-widget-archives.php' );
+include( 'inc/sitekit-shortcode-archives.php' );
+include( 'inc/sitekit-widget-search.php' );
+include( 'inc/sitekit-widget-archives.php' );
 
 
 function sitekit_plugin_row_meta( $links, $file ) {
 	if ( $file == plugin_basename( __FILE__ ) ) {
 		$row_meta = array(
-			'support' => '<a href="http://web-profile.com.ua/wordpress/plugins/page-list/" target="_blank"><span class="dashicons dashicons-editor-help"></span> ' . __( 'Sitekit', 'sitekit' ) . '</a>',
+			'support' => '<a href="http://web-profile.com.ua/wordpress/plugins/sitekit/" target="_blank"><span class="dashicons dashicons-editor-help"></span> ' . __( 'Sitekit', 'sitekit' ) . '</a>',
 			'donate' => '<a href="http://web-profile.com.ua/donate/" target="_blank"><span class="dashicons dashicons-heart"></span> ' . __( 'Donate', 'sitekit' ) . '</a>',
 			'pro' => '<a href="http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii" target="_blank" title="Speedup and protect WordPress in a smart way"><span class="dashicons dashicons-star-filled"></span> ' . __( 'Silver Bullet Pro', 'sitekit' ) . '</a>'
 		);
