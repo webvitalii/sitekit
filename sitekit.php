@@ -19,6 +19,8 @@ define('SITEKIT_PLUGIN_POWERED', "\n".'<!-- Powered by Sitekit plugin v.'.SITEKI
 
 
 include( 'inc/sitekit-shortcode-archives.php' );
+include( 'inc/sitekit-shortcode-bloginfo.php' );
+
 include( 'inc/sitekit-widget-search.php' );
 include( 'inc/sitekit-widget-archives.php' );
 

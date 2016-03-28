@@ -40,10 +40,18 @@ Plugin adds search and archives widgets.
 [sitekit_archives] is based on [wp_get_archives function](https://codex.wordpress.org/Function_Reference/wp_get_archives).
 
 
+= Parameters for [sitekit_bloginfo]: =
+* `[sitekit_bloginfo show="name"]` - [sitekit_bloginfo params](http://codex.wordpress.org/Function_Reference/get_bloginfo);
+
+
+`[sitekit_bloginfo]` is based on [bloginfo function](https://codex.wordpress.org/Function_Reference/bloginfo).
+
+
 == Changelog ==
 
 = 1.0 - 2016.03.28 =
-* initial release: search and archives widgets
+* initial release: search and archives widgets, [sitekit_archives] and [sitekit_bloginfo]
+
 
 == Installation ==
 
