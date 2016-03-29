@@ -178,7 +178,12 @@ class Sitekit_Archives_Widget extends WP_Widget {
 		$instance['limit'] = intval( $new_instance['limit'] );
 		$instance['limit'] = $instance['limit'] === 0 ? '' : $instance['limit'];
 		$instance['format'] = $new_instance['format'];
-		$instance['show_post_count'] = isset( $new_instance['show_post_count'] ) ? 1 : 0;
+
+		$instance['show_post_count'] = 1;
+		if( !isset( $new_instance['show_post_count'] ) || empty( $new_instance['show_post_count'] ) ) {
+			$instance['show_post_count'] = 0;
+		}
+		
 		$instance['order'] = $new_instance['order'];
 		return $instance;
 	}
@@ -196,7 +201,7 @@ class Sitekit_Archives_Widget extends WP_Widget {
 			'type' => 'monthly',
 			'limit' => 10,
 			'format' => 'html',
-			'show_post_count' => false,
+			'show_post_count' => 0,
 			'order' => 'DESC'
 		);
 		return $defaults;
