@@ -141,7 +141,7 @@ class Sitekit_Archives_Widget extends WP_Widget {
 
 <p>
 	<label>
-		<input class="checkbox" type="checkbox" <?php checked( $instance['show_post_count'], true ); ?> 
+		<input class="checkbox" type="checkbox" <?php checked( $instance['show_post_count'] ); ?> 
 			name="<?php echo $this->get_field_name( 'show_post_count' ); ?>" />
 		<?php _e( 'Show post count', 'sitekit' ); ?>
 	</label>
@@ -178,11 +178,13 @@ class Sitekit_Archives_Widget extends WP_Widget {
 		$instance['limit'] = intval( $new_instance['limit'] );
 		$instance['limit'] = $instance['limit'] === 0 ? '' : $instance['limit'];
 		$instance['format'] = $new_instance['format'];
-
-		$instance['show_post_count'] = 1;
+		
+		$instance['show_post_count'] = $new_instance['show_post_count'] ? 1 : 0;
+		
+		/*$instance['show_post_count'] = 1;
 		if( !isset( $new_instance['show_post_count'] ) || empty( $new_instance['show_post_count'] ) ) {
 			$instance['show_post_count'] = 0;
-		}
+		}*/
 		
 		$instance['order'] = $new_instance['order'];
 		return $instance;

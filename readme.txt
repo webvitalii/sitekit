@@ -1,14 +1,14 @@
 === Sitekit ===
 Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
-Tags: widget, widgets
+Tags: widget, widgets, search, archive, archives, shortcode, shortcodes, bloginfo,
 Requires at least: 3.0
 Tested up to: 5.0
 Stable tag: 1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Plugin adds search and archives widgets.
+Plugin adds search and archives widgets, archives and bloginfo shortcodes.
 
 == Description ==
 

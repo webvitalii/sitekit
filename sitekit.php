@@ -2,7 +2,7 @@
 /*
 Plugin Name: Sitekit
 Plugin URI: http://wordpress.org/plugins/sitekit/
-Description: Plugin adds search and archives widgets.
+Description: Plugin adds search and archives widgets, archives and bloginfo shortcodes.
 Version: 1.0
 Author: webvitaly
 Text Domain: sitekit
