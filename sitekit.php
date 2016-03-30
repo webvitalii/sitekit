@@ -2,7 +2,7 @@
 /*
 Plugin Name: Sitekit
 Plugin URI: http://wordpress.org/plugins/sitekit/
-Description: Widgets: search, archives and categories. Shortcodes: archives and bloginfo.
+Description: Widgets: search, archives and categories. Shortcodes: archives, bloginfo and categories.
 Version: 1.0
 Author: webvitaly
 Text Domain: sitekit
@@ -20,6 +20,7 @@ define('SITEKIT_PLUGIN_POWERED', "\n".'<!-- Powered by Sitekit plugin v.'.SITEKI
 
 include( 'inc/sitekit-shortcode-archives.php' );
 include( 'inc/sitekit-shortcode-bloginfo.php' );
+include( 'inc/sitekit-shortcode-categories.php' );
 
 include( 'inc/sitekit-widget-search.php' );
 include( 'inc/sitekit-widget-archives.php' );
