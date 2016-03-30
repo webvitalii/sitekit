@@ -167,28 +167,22 @@ class Sitekit_Archives_Widget extends WP_Widget {
 	 * @see WP_Widget::update()
 	 *
 	 * @param array $new_instance Values just sent to be saved.
-	 * @param array $old_instance Previously saved values from database.
+	 * @param array $instance Previously saved values from database.
 	 *
 	 * @return array Updated safe values to be saved.
 	 */
-	public function update( $new_instance, $old_instance ) {
-		$instance = $old_instance;
-		$new_instance = wp_parse_args( (array) $new_instance, self::get_defaults() );
+	public function update( $new_instance, $instance ) {
 		$instance['title'] = trim(strip_tags($new_instance['title']));
 		$instance['type'] = $new_instance['type'];
 		$instance['limit'] = intval( $new_instance['limit'] );
 		$instance['limit'] = $instance['limit'] === 0 ? '' : $instance['limit'];
 		$instance['format'] = $new_instance['format'];
-		
-		$instance['show_post_count'] = $new_instance['show_post_count'] ? 1 : 0;
-		
-		/*$instance['show_post_count'] = 1;
-		if( !isset( $new_instance['show_post_count'] ) || empty( $new_instance['show_post_count'] ) ) {
-			$instance['show_post_count'] = 0;
-		}*/
-		
+		$instance['show_post_count'] = isset($new_instance['show_post_count']) ? 1 : 0;
 		$instance['order'] = $new_instance['order'];
-		return $instance;
+		
+		$updated_instance = wp_parse_args( (array) $instance, self::get_defaults() );
+		
+		return $updated_instance;
 	}
 
 	
