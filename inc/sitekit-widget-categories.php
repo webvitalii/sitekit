@@ -160,27 +160,27 @@ class Sitekit_Categories_Widget extends WP_Widget {
 	 * @see WP_Widget::update()
 	 *
 	 * @param array $new_instance Values just sent to be saved.
-	 * @param array $old_instance Previously saved values from database.
+	 * @param array $instance Previously saved values from database.
 	 *
 	 * @return array Updated safe values to be saved.
 	 */
-	public function update( $new_instance, $old_instance ) {
-		$instance = $old_instance;
-		$new_instance = wp_parse_args( (array) $new_instance, self::get_defaults() );
+	public function update( $new_instance, $instance ) {
 		$instance['title'] = trim(strip_tags($new_instance['title']));
 		$instance['orderby'] = $new_instance['orderby'];
 		$instance['order'] = $new_instance['order'];
 		
-		$instance['show_count'] = $new_instance['show_count'] ? 1 : 0;
-		$instance['hide_empty'] = $new_instance['hide_empty'] ? 1 : 0;
-		$instance['hierarchical'] = $new_instance['hierarchical'] ? 1 : 0;
+		$instance['show_count'] = isset($new_instance['show_count']) ? 1 : 0;
+		$instance['hide_empty'] = isset($new_instance['hide_empty']) ? 1 : 0;
+		$instance['hierarchical'] = isset($new_instance['hierarchical']) ? 1 : 0;
 		
 		$instance['child_of'] = intval($new_instance['child_of']);
 		$instance['exclude'] = trim(strip_tags($new_instance['exclude']));
 		$instance['exclude_tree'] = trim(strip_tags($new_instance['exclude_tree']));
 		$instance['depth'] = intval( $new_instance['depth'] );
 		
-		return $instance;
+		$updated_instance = wp_parse_args( (array) $instance, self::get_defaults() );
+		
+		return $updated_instance;
 	}
 
 	
@@ -196,8 +196,8 @@ class Sitekit_Categories_Widget extends WP_Widget {
 			'orderby' => 'name',
 			'order' => 'ASC',
 			'show_count' => 0,
-			'hide_empty' => 0,
-			'hierarchical' => 0,
+			'hide_empty' => 1,
+			'hierarchical' => 1,
 			'child_of' => 0,
 			'exclude' => '',
 			'exclude_tree' => '',
