@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Plugin adds search and archives widgets, archives and bloginfo shortcodes.
+Plugin adds search archives and categories widgets, archives and bloginfo shortcodes.
 
 == Description ==
 
