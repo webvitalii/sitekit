@@ -23,6 +23,7 @@ include( 'inc/sitekit-shortcode-bloginfo.php' );
 
 include( 'inc/sitekit-widget-search.php' );
 include( 'inc/sitekit-widget-archives.php' );
+include( 'inc/sitekit-widget-categories.php' );
 
 
 function sitekit_plugin_row_meta( $links, $file ) {

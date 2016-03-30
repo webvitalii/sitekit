@@ -32,7 +32,8 @@ class Sitekit_Archives_Widget extends WP_Widget {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
 		}
 		
-		$instance['echo'] = false;
+		$instance['echo'] = 0;
+		
 		$archives = wp_get_archives( $instance );
 
 		if ( $instance['format'] == 'option' ) { // Archives as a dropdown
