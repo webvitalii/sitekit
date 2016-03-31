@@ -17,6 +17,19 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 > **[Donate](http://web-profile.com.ua/donate/ "Support the development")** |
 > **[GitHub](https://github.com/webvitalii/sitekit "Fork")**
 
+= Widgets: =
+
+* `[sitekit_archives]`
+* `[sitekit_categories]`
+* `[sitekit_bloginfo]`
+
+= Shortcodes: =
+
+* archives
+* bloginfo
+* categories
+
+
 = Useful: =
 * **[Silver Bullet Pro - Speedup and protect WordPress in a smart way](http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii "Speedup and protect WordPress in a smart way")**
 * **[Anti-spam Pro - Block spam in comments](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitalii "Block spam in comments")**
