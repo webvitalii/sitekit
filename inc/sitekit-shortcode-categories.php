@@ -5,7 +5,7 @@ function sitekit_categories_shortcode( $atts ) {
 		'orderby' => 'name',
 		'order' => 'ASC',
 		'show_count' => 0,
-		'hide_empty' => 0,
+		'hide_empty' => 1,
 		'hierarchical' => 1,
 		'depth' => 0,
 		'taxonomy' => 'category',
