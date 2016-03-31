@@ -12,22 +12,22 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 
 == Description ==
 
-> **[Silver Bullet Pro](http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii "Speedup and protect WordPress in a smart way")** |
+> **[Speedup and protect WordPress](http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii "Speedup and protect WordPress in a smart way")** |
 > **[Sitekit](http://web-profile.com.ua/wordpress/plugins/sitekit/ "Plugin page")** |
 > **[Donate](http://web-profile.com.ua/donate/ "Support the development")** |
 > **[GitHub](https://github.com/webvitalii/sitekit "Fork")**
 
 = Widgets: =
 
-* `[sitekit_archives]`
-* `[sitekit_categories]`
-* `[sitekit_bloginfo]`
+* Archives
+* Categories
+* Search
 
 = Shortcodes: =
 
-* archives
-* bloginfo
-* categories
+* `[sitekit_archives]`
+* `[sitekit_categories]`
+* `[sitekit_bloginfo]`
 
 
 = Useful: =
