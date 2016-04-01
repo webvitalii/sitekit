@@ -60,11 +60,10 @@ class Sitekit_Categories_Widget extends WP_Widget {
 		$orderby_list = array( 
 			'name' => __( 'Name', 'sitekit' ),
 			'id' => __( 'ID', 'sitekit' )
-			
 		);
 		
 		$order_list = array(
-			'ASC'  => __( 'Ascending (A-Z)', 'sitekit' ),
+			'ASC' => __( 'Ascending (A-Z)', 'sitekit' ),
 			'DESC' => __( 'Descending (Z-A)', 'sitekit' )
 		);
 		

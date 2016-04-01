@@ -62,7 +62,7 @@ class Sitekit_Archives_Widget extends WP_Widget {
 			
 		} elseif ( $instance['format'] == 'html' ) { // Archives as an unordered list
 		
-			echo '<ul class="sitekit-archives">' . $archives . '</ul><!-- .sitekit-archives -->';
+			echo "\n".'<ul class="sitekit-archives">' ."\n". $archives ."\n". '</ul><!-- .sitekit-archives -->'."\n";
 			
 		} else { // Other formats
 		
@@ -101,7 +101,7 @@ class Sitekit_Archives_Widget extends WP_Widget {
 		);
 		
 		$order_list = array(
-			'ASC'  => __( 'Ascending (A-Z)', 'sitekit' ),
+			'ASC' => __( 'Ascending (A-Z)', 'sitekit' ),
 			'DESC' => __( 'Descending (Z-A)', 'sitekit' )
 		);
 		

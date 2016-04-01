@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: widget, widgets, search, archive, archives, category, categories, shortcode, shortcodes, bloginfo
 Requires at least: 3.0
 Tested up to: 5.0
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -78,6 +78,9 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 
 
 == Changelog ==
+
+= 1.1 - 2016.04.01 =
+* Added pages widgets.
 
 = 1.0 - 2016.03.30 =
 * initial release: Widgets: search, archives and categories. Shortcodes: archives, bloginfo and categories.
