@@ -29,6 +29,8 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 * `[sitekit_categories]`
 * `[sitekit_bloginfo]`
 
+[Shortcodes with params](https://wordpress.org/plugins/sitekit/other_notes/)
+
 
 = Useful: =
 * **[Silver Bullet Pro - Speedup and protect WordPress in a smart way](http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii "Speedup and protect WordPress in a smart way")**
@@ -69,10 +71,10 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 
 
 = Parameters for [sitekit_bloginfo]: =
-* `[sitekit_bloginfo show="name"]` - [sitekit_bloginfo params](http://codex.wordpress.org/Function_Reference/get_bloginfo);
+* `[sitekit_bloginfo show="name"]` - [sitekit_bloginfo params](https://developer.wordpress.org/reference/functions/bloginfo/);
 
 
-`[sitekit_bloginfo]` is based on [bloginfo function](https://codex.wordpress.org/Function_Reference/bloginfo).
+[sitekit_bloginfo] is based on [bloginfo function](https://developer.wordpress.org/reference/functions/bloginfo/).
 
 
 == Changelog ==

@@ -38,8 +38,6 @@ class Sitekit_Categories_Widget extends WP_Widget {
 		$instance['show_option_none'] = '';
 		$instance['feed'] = '';
 		
-		
-		
 		$categories = wp_list_categories( $instance );
 		
 		echo $categories;
