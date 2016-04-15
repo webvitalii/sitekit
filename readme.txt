@@ -1,7 +1,7 @@
 === Sitekit ===
 Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
-Tags: widget, widgets, search, archive, archives, category, categories, shortcode, shortcodes, bloginfo
+Tags: widget, widgets, search, archive, archives, category, categories, pages, shortcode, shortcodes, bloginfo
 Requires at least: 3.0
 Tested up to: 5.0
 Stable tag: 1.1
@@ -21,6 +21,7 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 
 * Archives
 * Categories
+* Pages
 * Search
 
 = Shortcodes: =
