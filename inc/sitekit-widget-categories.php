@@ -40,7 +40,7 @@ class Sitekit_Categories_Widget extends WP_Widget {
 		
 		$categories = wp_list_categories( $instance );
 		
-		echo $categories;
+		echo "\n".'<ul class="sitekit-categories">' ."\n". $categories ."\n". '</ul><!-- .sitekit-categories -->'."\n";
 		
 		echo $args['after_widget'];
 		echo SITEKIT_PLUGIN_POWERED;

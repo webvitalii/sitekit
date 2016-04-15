@@ -33,6 +33,7 @@ function sitekit_categories_shortcode( $atts ) {
 	);
 	
 	$categories = wp_list_categories( $categories_args );
+	$categories = "\n".'<ul class="sitekit-categories">' . "\n" . $categories . "\n" . '</ul><!-- .sitekit-categories -->' . "\n";
 	
 	return $categories . SITEKIT_PLUGIN_POWERED;
 }
