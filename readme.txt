@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: widget, widgets, search, archive, archives, category, categories, pages, shortcode, shortcodes, bloginfo
 Requires at least: 3.0
 Tested up to: 5.0
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -16,6 +16,13 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 > **[Sitekit](http://web-profile.com.ua/wordpress/plugins/sitekit/ "Plugin page")** |
 > **[Donate](http://web-profile.com.ua/donate/ "Support the development")** |
 > **[GitHub](https://github.com/webvitalii/sitekit "Fork")**
+
+= Settings: =
+
+* Google Analytics code
+* Show/hide google analytics code if user is logged in
+* Head code
+* Footer code
 
 = Widgets: =
 
@@ -79,6 +86,12 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 
 
 == Changelog ==
+
+= 1.2 - 2016.06.07 =
+* Added Google Analytics code setting
+* Added Show/hide google analytics code if user is logged in setting
+* Added Head code setting
+* Added Footer code setting
 
 = 1.1 - 2016.04.01 =
 * Added pages widgets.
