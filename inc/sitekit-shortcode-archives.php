@@ -8,39 +8,29 @@ function sitekit_archives_shortcode( $atts ) {
 		'before' => '',
 		'after' => '',
 		'show_post_count' => 0,
-		//'echo' => 0,
+		'echo' => 0,
 		'order' => 'DESC'
 	);
 	$atts_obj = shortcode_atts( $defaults, $atts );
-	$archives_args = array(
-		'type' => $atts_obj['type'],
-		'limit' => $atts_obj['limit'],
-		'format' => $atts_obj['format'],
-		'before' => '',
-		'after' => '',
-		'show_post_count' => $atts_obj['show_post_count'],
-		'echo' => 0,
-		'order' => $atts_obj['order']
-	);
 	
-	$archives = wp_get_archives( $archives_args );
+	$archives = wp_get_archives( $atts_obj );
 	
-	if ( $archives_args['format'] == 'option' ) { // Archives as a dropdown
+	if ( $atts_obj['format'] == 'option' ) { // Archives as a dropdown
 
 		// Create a title for the drop-down based on the archive type
-		if ( $archives_args['type'] == 'yearly' ) {
+		if ( $atts_obj['type'] == 'yearly' ) {
 			$option_title = __( 'Select Year', 'sitekit' );
 
-		} elseif ( $archives_args['type'] == 'monthly' ) {
+		} elseif ( $atts_obj['type'] == 'monthly' ) {
 			$option_title = __( 'Select Month', 'sitekit' );
 
-		} elseif ( $archives_args['type'] == 'weekly' ) {
+		} elseif ( $atts_obj['type'] == 'weekly' ) {
 			$option_title = __( 'Select Week', 'sitekit' );
 
-		} elseif ( $archives_args['type'] == 'daily' ) {
+		} elseif ( $atts_obj['type'] == 'daily' ) {
 			$option_title = __( 'Select Day', 'sitekit' );
 
-		} elseif ( $archives_args['type'] == 'postbypost' || $archives_args['type'] == 'alpha' ) {
+		} elseif ( $atts_obj['type'] == 'postbypost' || $atts_obj['type'] == 'alpha' ) {
 			$option_title = __( 'Select Post', 'sitekit' );
 		}
 		// Output the <select> element and each <option>
@@ -49,7 +39,7 @@ function sitekit_archives_shortcode( $atts ) {
 			$archives_output .= $archives;
 		$archives_output .= '</select></p><!-- .sitekit-archives -->';
 		
-	} elseif ( $archives_args['format'] == 'html' ) { // Archives as an unordered list
+	} elseif ( $atts_obj['format'] == 'html' ) { // Archives as an unordered list
 
 		$archives_output = '<ul class="sitekit-archives">' . $archives . '</ul><!-- .sitekit-archives -->';
 

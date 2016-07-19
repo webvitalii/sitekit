@@ -11,28 +11,17 @@ function sitekit_categories_shortcode( $atts ) {
 		'taxonomy' => 'category',
 		'child_of' => 0,
 		'exclude' => '',
-		'exclude_tree' => ''
-	);
-	extract( shortcode_atts( $defaults, $atts ) );
-	$categories_args = array(
-		'order' => $order,
-		'orderby' => $orderby,
-		'show_count' => $show_count,
-		'hide_empty' => $hide_empty,
-		'hierarchical' => $hierarchical,
-		'depth' => $depth,
-		'taxonomy' => $taxonomy,
-		'child_of' => $child_of,
-		'exclude' => $exclude,
-		'exclude_tree' => $exclude_tree,
+		'exclude_tree' => '',
 		'title_li' => '',
 		'show_option_all' => '',
 		'show_option_none' => '',
 		'feed' => '',
 		'echo' => 0
 	);
+	$atts_obj = shortcode_atts( $defaults, $atts );
 	
-	$categories = wp_list_categories( $categories_args );
+	$categories = wp_list_categories( $atts_obj );
+	
 	$categories = "\n".'<ul class="sitekit-categories">' . "\n" . $categories . "\n" . '</ul><!-- .sitekit-categories -->' . "\n";
 	
 	return $categories . SITEKIT_PLUGIN_POWERED;
