@@ -25,7 +25,7 @@ include( 'inc/sitekit-settings.php' );
 include( 'inc/sitekit-shortcode-archives.php' );
 include( 'inc/sitekit-shortcode-bloginfo.php' );
 include( 'inc/sitekit-shortcode-categories.php' );
-//include( 'inc/sitekit-shortcode-posts.php' );
+include( 'inc/sitekit-shortcode-posts.php' );
 
 
 include( 'inc/sitekit-widget-search.php' );
