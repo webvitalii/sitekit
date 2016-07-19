@@ -2,7 +2,7 @@
 /*
 Plugin Name: Sitekit
 Plugin URI: http://wordpress.org/plugins/sitekit/
-Description: Widgets: search, archives, categories, pages. Shortcodes: archives, bloginfo and categories.
+Description: Widgets: search, archives, categories, pages. Shortcodes: archives, bloginfo, categories.
 Version: 1.2
 Author: webvitaly
 Text Domain: sitekit
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) { // prevent full path disclosure
 }
 
 define('SITEKIT_PLUGIN_VERSION', '1.2');
-define('SITEKIT_PLUGIN_POWERED', "\n".'<!-- Powered by Sitekit plugin v.'.SITEKIT_PLUGIN_VERSION.' wordpress.org/plugins/sitekit/ -->'."\n");
+define('SITEKIT_PLUGIN_POWERED', "\n".'<!-- Powered by Sitekit v.'.SITEKIT_PLUGIN_VERSION.' wordpress.org/plugins/sitekit/ -->'."\n");
 
 
 include( 'inc/sitekit-functions.php' );
@@ -25,6 +25,7 @@ include( 'inc/sitekit-settings.php' );
 include( 'inc/sitekit-shortcode-archives.php' );
 include( 'inc/sitekit-shortcode-bloginfo.php' );
 include( 'inc/sitekit-shortcode-categories.php' );
+//include( 'inc/sitekit-shortcode-posts.php' );
 
 
 include( 'inc/sitekit-widget-search.php' );
