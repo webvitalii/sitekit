@@ -12,7 +12,7 @@ function sitekit_posts_shortcode( $atts ) {
 	
 	$defaults = array(
 		'post_type' => 'post',
-		'posts_per_page' => get_option('posts_per_page'),
+		'posts_per_page' => 500, //get_option('posts_per_page'),
 		'paged' => $paged,
 		'post_status' => 'publish',
 		'ignore_sticky_posts' => true,

@@ -53,6 +53,7 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 * **post_type** - show posts associated with certain type: `[sitekit_posts post_type="page"]`; by default posts are shown: `[sitekit_posts post_type="post"]`; Possible params: post | page | revision | attachment | nav_menu_item | any | your_custom_post_type
 * **orderby** - the column to use for ordering posts list: `[sitekit_posts orderby="id"]`; by default list is sorted by date: `[sitekit_posts orderby="date"]`; Possible params: modified | title | name | ID | rand
 * **order** - how to sort posts list: `[sitekit_posts order="DESC"]`; by default list is sorted by ascending order (A-Z): `[sitekit_posts order="ASC"]`;
+* **posts_per_page** - how many posts to show in the list: `[sitekit_posts posts_per_page="50"]`; by default: `[sitekit_posts posts_per_page="500"]`;
 
 [sitekit_posts] is based on [WP_Query class](https://codex.wordpress.org/Class_Reference/WP_Query).
 
