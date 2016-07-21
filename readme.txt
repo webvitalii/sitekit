@@ -1,6 +1,6 @@
 === Sitekit ===
 Contributors: webvitaly
-Donate link: http://web-profile.com.ua/donate/
+Donate link: http://web-profile.net/donate/
 Tags: widget, widgets, search, archive, archives, category, categories, pages, shortcode, shortcodes, bloginfo
 Requires at least: 3.0
 Tested up to: 5.0
@@ -13,8 +13,8 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 == Description ==
 
 > **[Speedup and Protect WordPress](http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii "Silver Bullet Pro - Speedup and Protect WordPress in a Smart Way")** |
-> **[Sitekit](http://web-profile.com.ua/wordpress/plugins/sitekit/ "Plugin page")** |
-> **[Donate](http://web-profile.com.ua/donate/ "Support the development")** |
+> **[Sitekit](http://web-profile.net/wordpress/plugins/sitekit/ "Plugin page")** |
+> **[Donate](http://web-profile.net/donate/ "Support the development")** |
 > **[GitHub](https://github.com/webvitalii/sitekit "Fork")**
 
 = Settings: =
