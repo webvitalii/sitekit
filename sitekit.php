@@ -32,7 +32,7 @@ include( 'inc/sitekit-widget-search.php' );
 include( 'inc/sitekit-widget-archives.php' );
 include( 'inc/sitekit-widget-categories.php' );
 include( 'inc/sitekit-widget-pages.php' );
-//include( 'inc/sitekit-widget-posts.php' );
+include( 'inc/sitekit-widget-posts.php' );
 
 
 function sitekit_plugin_row_meta( $links, $file ) {

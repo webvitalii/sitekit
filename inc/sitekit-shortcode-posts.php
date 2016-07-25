@@ -12,7 +12,7 @@ function sitekit_posts_shortcode( $atts ) {
 	
 	$defaults = array(
 		'post_type' => 'post',
-		'posts_per_page' => 500, //get_option('posts_per_page'),
+		'posts_per_page' => 100, //get_option('posts_per_page'),
 		'paged' => $paged,
 		'post_status' => 'publish',
 		'ignore_sticky_posts' => true,
@@ -52,7 +52,7 @@ function sitekit_posts_shortcode( $atts ) {
 	 
 		wp_reset_postdata(); // reset the query 
 	else:
-		echo '<p>'.__('Sorry, no posts matched your criteria.', 'sitekit').'</p>';
+		$posts_output .= '<p>'.__('Sorry, no posts matched your criteria.', 'sitekit').'</p>';
 	endif;
 	
 	return $posts_output . SITEKIT_PLUGIN_POWERED;
