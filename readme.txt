@@ -2,7 +2,7 @@
 Contributors: webvitaly
 Donate link: http://web-profile.net/donate/
 Tags: widget, widgets, search, archive, archives, category, categories, pages, shortcode, shortcodes, bloginfo
-Requires at least: 3.0
+Requires at least: 4.0
 Tested up to: 5.0
 Stable tag: 1.2
 License: GPLv3

@@ -2,7 +2,7 @@
 /*
 Plugin Name: Sitekit
 Plugin URI: http://wordpress.org/plugins/sitekit/
-Description: Widgets: search, archives, categories, pages. Shortcodes: archives, bloginfo, categories.
+Description: Widgets: search, archives, categories, pages, posts. Shortcodes: archives, bloginfo, categories, posts.
 Version: 1.2
 Author: webvitaly
 Text Domain: sitekit
@@ -35,20 +35,6 @@ include( 'inc/sitekit-widget-pages.php' );
 include( 'inc/sitekit-widget-posts.php' );
 
 
-function sitekit_plugin_row_meta( $links, $file ) {
-	if ( $file == plugin_basename( __FILE__ ) ) {
-		$row_meta = array(
-			'support' => '<a href="http://web-profile.net/wordpress/plugins/sitekit/" target="_blank"><span class="dashicons dashicons-editor-help"></span> ' . __( 'Sitekit', 'sitekit' ) . '</a>',
-			'donate' => '<a href="http://web-profile.net/donate/" target="_blank"><span class="dashicons dashicons-heart"></span> ' . __( 'Donate', 'sitekit' ) . '</a>',
-			'pro' => '<a href="http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii" target="_blank" title="Silver Bullet Pro - Speedup and Protect WordPress in a Smart Way"><span class="dashicons dashicons-star-filled"></span> ' . __( 'Speedup and Protect WordPress', 'sitekit' ) . '</a>'
-		);
-		$links = array_merge( $links, $row_meta );
-	}
-	return (array) $links;
-}
-add_filter( 'plugin_row_meta', 'sitekit_plugin_row_meta', 10, 2 );
-
-
 function sitekit_wp_head() { // output content to the head section
 	$settings = sitekit_get_settings();
 	$code_head = $settings['code_head'];
@@ -56,7 +42,7 @@ function sitekit_wp_head() { // output content to the head section
 	if ( ! empty( $code_head ) ) {
 		echo "\n".'<!-- Sitekit head code -->'."\n";
 		echo $code_head;
-		echo "\n".'<!-- end of Sitekit head code -->'."\n";
+		echo "\n".'<!-- End of Sitekit head code -->'."\n";
 	}
 }
 add_action( 'wp_head', 'sitekit_wp_head' );
@@ -73,7 +59,7 @@ function sitekit_wp_footer() { // output content to the footer section
 	if ( ! empty( $code_footer ) ) {
 		echo "\n".'<!-- Sitekit footer code -->'."\n";
 		echo $code_footer;
-		echo "\n".'<!-- end of Sitekit footer code -->'."\n";
+		echo "\n".'<!-- End of Sitekit footer code -->'."\n";
 	}
 	
 	
@@ -91,9 +77,23 @@ ga('create', '<?php echo $ga_code; ?>', 'auto');
 ga('send', 'pageview');
 </script>
 			<?php
-			echo "\n".'<!-- end of Sitekit Google Analytics code -->'."\n";
+			echo "\n".'<!-- End of Sitekit Google Analytics code -->'."\n";
 		}
 	}
 
 }
 add_action( 'wp_footer', 'sitekit_wp_footer' );
+
+
+function sitekit_plugin_row_meta( $links, $file ) {
+	if ( $file == plugin_basename( __FILE__ ) ) {
+		$row_meta = array(
+			'support' => '<a href="http://web-profile.net/wordpress/plugins/sitekit/" target="_blank"><span class="dashicons dashicons-editor-help"></span> ' . __( 'Sitekit', 'sitekit' ) . '</a>',
+			'donate' => '<a href="http://web-profile.net/donate/" target="_blank"><span class="dashicons dashicons-heart"></span> ' . __( 'Donate', 'sitekit' ) . '</a>',
+			'pro' => '<a href="http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii" target="_blank" title="Silver Bullet Pro - Speedup and Protect WordPress in a Smart Way"><span class="dashicons dashicons-star-filled"></span> ' . __( 'Speedup and Protect WordPress', 'sitekit' ) . '</a>'
+		);
+		$links = array_merge( $links, $row_meta );
+	}
+	return (array) $links;
+}
+add_filter( 'plugin_row_meta', 'sitekit_plugin_row_meta', 10, 2 );

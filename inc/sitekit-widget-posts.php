@@ -36,8 +36,9 @@ class Sitekit_Posts_Widget extends WP_Widget {
 	
 		$custom_query = new WP_Query( $atts_obj );
 		echo '+++';
-		print_r( $custom_query );
-		echo '===';
+		//print_r( $custom_query );
+		//echo '===';
+		print_r( $atts_obj );
 		
 		$posts_output = '';
 
@@ -144,14 +145,14 @@ class Sitekit_Posts_Widget extends WP_Widget {
 		$instance['orderby'] = $new_instance['orderby'];
 		$instance['order'] = $new_instance['order'];
 		
-		$instance['show_count'] = isset($new_instance['show_count']) ? 1 : 0;
+		/*$instance['show_count'] = isset($new_instance['show_count']) ? 1 : 0;
 		$instance['hide_empty'] = isset($new_instance['hide_empty']) ? 1 : 0;
 		$instance['hierarchical'] = isset($new_instance['hierarchical']) ? 1 : 0;
 		
 		$instance['child_of'] = intval($new_instance['child_of']);
 		$instance['exclude'] = trim(strip_tags($new_instance['exclude']));
 		$instance['exclude_tree'] = trim(strip_tags($new_instance['exclude_tree']));
-		$instance['depth'] = intval( $new_instance['depth'] );
+		$instance['depth'] = intval( $new_instance['depth'] );*/
 		
 		$updated_instance = wp_parse_args( (array) $instance, self::get_defaults() );
 		
@@ -178,9 +179,9 @@ class Sitekit_Posts_Widget extends WP_Widget {
 			'description' => '',
 			'post_type' => 'post',
 			'posts_per_page' => 100, //get_option('posts_per_page'),
-			'paged' => $paged,
-			'post_status' => 'publish',
-			'ignore_sticky_posts' => true,
+			//'paged' => 1, //$paged,
+			//'post_status' => 'publish',
+			//'ignore_sticky_posts' => true,
 			//'category_name' => 'custom-cat',
 			'order' => 'DESC', // 'ASC'
 			'orderby' => 'date' // modified | title | name | ID | rand
