@@ -9,7 +9,7 @@ class Sitekit_Posts_Widget extends WP_Widget {
 		parent::__construct(
 			'sitekit_posts_widget', // Base ID
 			__( 'Sitekit Posts', 'sitekit' ), // Name
-			array( 'description' => __( 'Sitekit Posts Widget', 'sitekit' ) ) // Args
+			array( 'description' => __( 'Sitekit Posts/Pages Widget', 'sitekit' ) ) // Args
 		);
 	}
 
@@ -33,12 +33,35 @@ class Sitekit_Posts_Widget extends WP_Widget {
 		}
 		
 		$atts_obj = $instance;
-	
-		$custom_query = new WP_Query( $atts_obj );
-		echo '+++';
+		
+		$query_default_args = array(
+			'post_type' => 'post',
+			'posts_per_page' => 100, //get_option('posts_per_page'),
+			'paged' => 1,
+			'post_status' => 'publish',
+			'ignore_sticky_posts' => true,
+			//'category_name' => 'custom-cat',
+			'order' => 'DESC', // 'ASC'
+			'orderby' => 'date' // modified | title | name | ID | rand
+		);
+		$query_widget_args = array(
+			'sort_column' => $instance['sort_column'],
+			'sort_order' => $instance['sort_order'],
+			'hierarchical' => $instance['hierarchical'],
+			'child_of' => $instance['child_of'],
+			'include' => $instance['include'],
+			'exclude' => $instance['exclude'],
+			'exclude_tree' => $instance['exclude_tree'],
+			'authors' => $instance['authors'],
+			'number' =>  $instance['number']
+		);
+		$query_args = array_merge( $query_default_args, $query_widget_args );
+		
+		$custom_query = new WP_Query( $query_args );
+		//echo '+++';
 		//print_r( $custom_query );
 		//echo '===';
-		print_r( $atts_obj );
+		print_r( $query_args );
 		
 		$posts_output = '';
 
@@ -88,12 +111,20 @@ class Sitekit_Posts_Widget extends WP_Widget {
 	public function form( $instance ) {
 		$instance = wp_parse_args( (array) $instance, self::get_defaults() );
 		
-		$orderby_list = array( 
-			'name' => __( 'Name', 'sitekit' ),
-			'id' => __( 'ID', 'sitekit' )
+		$sort_column_list = array( 
+			'post_title' => __( 'Post title', 'sitekit' ),
+			'post_name' => __( 'Post slug', 'sitekit' ),
+			'ID' => __( 'ID', 'sitekit' ),
+			'post_date' => __( 'Post date', 'sitekit' ),
+			'post_modified' => __( 'Post date modified', 'sitekit' ),
+			'comment_count' => __( 'Comment count', 'sitekit' ),
+			'post_author' => __( 'Post author', 'sitekit' ),
+			'menu_order' => __( 'Menu order', 'sitekit' ),
+			'post_parent' => __( 'Post parent', 'sitekit' ),
+			'rand' => __( 'Random order', 'sitekit' )
 		);
 		
-		$order_list = array(
+		$sort_order_list = array(
 			'ASC' => __( 'Ascending (A-Z)', 'sitekit' ),
 			'DESC' => __( 'Descending (Z-A)', 'sitekit' )
 		);
@@ -108,21 +139,71 @@ class Sitekit_Posts_Widget extends WP_Widget {
 
 <p>
 	<label><?php _e( 'Order by:', 'sitekit' ); ?><br>
-		<select class="widefat" name="<?php echo $this->get_field_name( 'orderby' ); ?>">
-			<?php foreach ( $orderby_list as $option_value => $option_label ) { ?>
-				<option value="<?php echo esc_attr( $option_value ); ?>" <?php selected( $instance['orderby'], $option_value ); ?>><?php echo esc_html( $option_label ); ?></option>
+		<select class="widefat" name="<?php echo $this->get_field_name( 'sort_column' ); ?>">
+			<?php foreach ( $sort_column_list as $option_value => $option_label ) { ?>
+				<option value="<?php echo esc_attr( $option_value ); ?>" <?php selected( $instance['sort_column'], $option_value ); ?>><?php echo esc_html( $option_label ); ?></option>
 			<?php } ?>
 		</select>
 	</label>
 </p>
 
 <p>
-	<label><?php _e( 'Order:', 'sitekit' ); ?><br>
-		<select class="widefat" name="<?php echo $this->get_field_name( 'order' ); ?>">
-			<?php foreach ( $order_list as $option_value => $option_label ) { ?>
-				<option value="<?php echo esc_attr( $option_value ); ?>" <?php selected( $instance['order'], $option_value ); ?>><?php echo esc_html( $option_label ); ?></option>
+	<label><?php _e( 'Sort order:', 'sitekit' ); ?><br>
+		<select class="widefat" name="<?php echo $this->get_field_name( 'sort_order' ); ?>">
+			<?php foreach ( $sort_order_list as $option_value => $option_label ) { ?>
+				<option value="<?php echo esc_attr( $option_value ); ?>" <?php selected( $instance['sort_order'], $option_value ); ?>><?php echo esc_html( $option_label ); ?></option>
 			<?php } ?>
 		</select>
+	</label>
+</p>
+
+<p>
+	<label>
+		<input class="checkbox" type="checkbox" <?php checked( $instance['hierarchical'] ); ?> 
+			name="<?php echo $this->get_field_name( 'hierarchical' ); ?>" />
+		<?php _e( 'Hierarchical', 'sitekit' ); ?>
+	</label>
+</p>
+
+<p>
+	<label><?php _e( 'Child of:', 'sitekit' ); ?><br>
+		<input type="number" class="widefat" min="0" name="<?php echo $this->get_field_name( 'child_of' ); ?>" 
+			value="<?php echo esc_attr( $instance['child_of'] ); ?>">
+	</label>
+</p>
+
+<p>
+	<label><?php _e( 'Include (comma-separated list of page IDs):', 'sitekit' ); ?><br>
+		<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'include' ); ?>" 
+			value="<?php echo esc_attr( $instance['include'] ); ?>">
+	</label>
+</p>
+
+<p>
+	<label><?php _e( 'Exclude (comma-separated list of page IDs):', 'sitekit' ); ?><br>
+		<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'exclude' ); ?>" 
+			value="<?php echo esc_attr( $instance['exclude'] ); ?>">
+	</label>
+</p>
+
+<p>
+	<label><?php _e( 'Exclude tree (comma-separated list of page IDs):', 'sitekit' ); ?><br>
+		<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'exclude_tree' ); ?>" 
+			value="<?php echo esc_attr( $instance['exclude_tree'] ); ?>">
+	</label>
+</p>
+
+<p>
+	<label><?php _e( 'Authors (comma-separated list of author IDs):', 'sitekit' ); ?><br>
+		<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'authors' ); ?>" 
+			value="<?php echo esc_attr( $instance['authors'] ); ?>">
+	</label>
+</p>
+
+<p>
+	<label><?php _e( 'Number of posts to show:', 'sitekit' ); ?><br>
+		<input type="number" class="widefat" min="0" name="<?php echo $this->get_field_name( 'number' ); ?>" 
+			value="<?php echo esc_attr( $instance['number'] ); ?>">
 	</label>
 </p>
 
@@ -142,17 +223,17 @@ class Sitekit_Posts_Widget extends WP_Widget {
 	 */
 	public function update( $new_instance, $instance ) {
 		$instance['title'] = trim(strip_tags($new_instance['title']));
-		$instance['orderby'] = $new_instance['orderby'];
-		$instance['order'] = $new_instance['order'];
+		$instance['sort_column'] = $new_instance['sort_column'];
+		$instance['sort_order'] = $new_instance['sort_order'];
 		
-		/*$instance['show_count'] = isset($new_instance['show_count']) ? 1 : 0;
-		$instance['hide_empty'] = isset($new_instance['hide_empty']) ? 1 : 0;
 		$instance['hierarchical'] = isset($new_instance['hierarchical']) ? 1 : 0;
 		
 		$instance['child_of'] = intval($new_instance['child_of']);
+		$instance['include'] = trim(strip_tags($new_instance['include']));
 		$instance['exclude'] = trim(strip_tags($new_instance['exclude']));
 		$instance['exclude_tree'] = trim(strip_tags($new_instance['exclude_tree']));
-		$instance['depth'] = intval( $new_instance['depth'] );*/
+		$instance['authors'] = trim(strip_tags($new_instance['authors']));
+		$instance['number'] = trim(strip_tags($new_instance['number']));
 		
 		$updated_instance = wp_parse_args( (array) $instance, self::get_defaults() );
 		
@@ -166,29 +247,21 @@ class Sitekit_Posts_Widget extends WP_Widget {
 	 * @return array default values
 	 */
 	private static function get_defaults() {
-		if ( get_query_var('paged') ) {
-			$paged = get_query_var('paged');
-		} elseif ( get_query_var('page') ) { // 'page' is used instead of 'paged' on Static Front Page
-			$paged = get_query_var('page');
-		} else {
-			$paged = 1;
-		}
-		
 		$defaults = array(
 			'title' => __( 'Posts', 'sitekit' ),
-			'description' => '',
-			'post_type' => 'post',
-			'posts_per_page' => 100, //get_option('posts_per_page'),
-			//'paged' => 1, //$paged,
-			//'post_status' => 'publish',
-			//'ignore_sticky_posts' => true,
-			//'category_name' => 'custom-cat',
-			'order' => 'DESC', // 'ASC'
-			'orderby' => 'date' // modified | title | name | ID | rand
+			'sort_column' => 'post_title',
+			'sort_order' => 'ASC',
+			'hierarchical' => 1,
+			'child_of' => 0,
+			'include' => '',
+			'exclude' => '',
+			'exclude_tree' => '',
+			'authors' => '',
+			'number' => 0
 		);
 		return $defaults;
 	}
-	
+
 }
 
 

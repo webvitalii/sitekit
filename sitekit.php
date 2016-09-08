@@ -31,8 +31,13 @@ include( 'inc/sitekit-shortcode-posts.php' );
 include( 'inc/sitekit-widget-search.php' );
 include( 'inc/sitekit-widget-archives.php' );
 include( 'inc/sitekit-widget-categories.php' );
-include( 'inc/sitekit-widget-pages.php' );
 include( 'inc/sitekit-widget-posts.php' );
+
+
+function sitekit_enqueue_scripts() {
+	wp_enqueue_style( 'sitekit-flexify-style', plugin_dir_url( __FILE__ ) . 'assets/flexify/css/flexify.css', array(), SITEKIT_PLUGIN_VERSION, 'all' );
+}
+add_action( 'wp_enqueue_scripts', 'sitekit_enqueue_scripts' );
 
 
 function sitekit_wp_head() { // output content to the head section
