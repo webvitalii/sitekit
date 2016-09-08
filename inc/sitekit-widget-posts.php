@@ -45,8 +45,8 @@ class Sitekit_Posts_Widget extends WP_Widget {
 			'orderby' => 'date' // modified | title | name | ID | rand
 		);
 		$query_widget_args = array(
-			'sort_column' => $instance['sort_column'],
-			'sort_order' => $instance['sort_order'],
+			'orderby' => $instance['orderby'],
+			'order' => $instance['order'],
 			'hierarchical' => $instance['hierarchical'],
 			'child_of' => $instance['child_of'],
 			'include' => $instance['include'],
@@ -139,9 +139,9 @@ class Sitekit_Posts_Widget extends WP_Widget {
 
 <p>
 	<label><?php _e( 'Order by:', 'sitekit' ); ?><br>
-		<select class="widefat" name="<?php echo $this->get_field_name( 'sort_column' ); ?>">
+		<select class="widefat" name="<?php echo $this->get_field_name( 'orderby' ); ?>">
 			<?php foreach ( $sort_column_list as $option_value => $option_label ) { ?>
-				<option value="<?php echo esc_attr( $option_value ); ?>" <?php selected( $instance['sort_column'], $option_value ); ?>><?php echo esc_html( $option_label ); ?></option>
+				<option value="<?php echo esc_attr( $option_value ); ?>" <?php selected( $instance['orderby'], $option_value ); ?>><?php echo esc_html( $option_label ); ?></option>
 			<?php } ?>
 		</select>
 	</label>
@@ -149,9 +149,9 @@ class Sitekit_Posts_Widget extends WP_Widget {
 
 <p>
 	<label><?php _e( 'Sort order:', 'sitekit' ); ?><br>
-		<select class="widefat" name="<?php echo $this->get_field_name( 'sort_order' ); ?>">
+		<select class="widefat" name="<?php echo $this->get_field_name( 'order' ); ?>">
 			<?php foreach ( $sort_order_list as $option_value => $option_label ) { ?>
-				<option value="<?php echo esc_attr( $option_value ); ?>" <?php selected( $instance['sort_order'], $option_value ); ?>><?php echo esc_html( $option_label ); ?></option>
+				<option value="<?php echo esc_attr( $option_value ); ?>" <?php selected( $instance['order'], $option_value ); ?>><?php echo esc_html( $option_label ); ?></option>
 			<?php } ?>
 		</select>
 	</label>
@@ -223,8 +223,8 @@ class Sitekit_Posts_Widget extends WP_Widget {
 	 */
 	public function update( $new_instance, $instance ) {
 		$instance['title'] = trim(strip_tags($new_instance['title']));
-		$instance['sort_column'] = $new_instance['sort_column'];
-		$instance['sort_order'] = $new_instance['sort_order'];
+		$instance['orderby'] = $new_instance['orderby'];
+		$instance['order'] = $new_instance['order'];
 		
 		$instance['hierarchical'] = isset($new_instance['hierarchical']) ? 1 : 0;
 		
@@ -249,8 +249,8 @@ class Sitekit_Posts_Widget extends WP_Widget {
 	private static function get_defaults() {
 		$defaults = array(
 			'title' => __( 'Posts', 'sitekit' ),
-			'sort_column' => 'post_title',
-			'sort_order' => 'ASC',
+			'orderby' => 'post_title',
+			'order' => 'ASC',
 			'hierarchical' => 1,
 			'child_of' => 0,
 			'include' => '',
