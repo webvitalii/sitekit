@@ -26,6 +26,7 @@ include( 'inc/sitekit-shortcode-archives.php' );
 include( 'inc/sitekit-shortcode-bloginfo.php' );
 include( 'inc/sitekit-shortcode-categories.php' );
 include( 'inc/sitekit-shortcode-posts.php' );
+include( 'inc/sitekit-shortcode-iframe.php' );
 
 
 include( 'inc/sitekit-widget-search.php' );
@@ -37,7 +38,7 @@ include( 'inc/sitekit-widget-posts.php' );
 function sitekit_enqueue_scripts() {
 	wp_enqueue_style( 'sitekit-flexify-style', plugin_dir_url( __FILE__ ) . 'assets/flexify/css/flexify.css', array(), SITEKIT_PLUGIN_VERSION, 'all' );
 }
-add_action( 'wp_enqueue_scripts', 'sitekit_enqueue_scripts' );
+//add_action( 'wp_enqueue_scripts', 'sitekit_enqueue_scripts' );
 
 
 function sitekit_wp_head() { // output content to the head section

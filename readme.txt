@@ -37,6 +37,7 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 * `[sitekit_archives]`
 * `[sitekit_categories]`
 * `[sitekit_bloginfo]`
+* `[sitekit_iframe]`
 
 
 [Shortcodes with params](https://wordpress.org/plugins/sitekit/other_notes/)
@@ -93,6 +94,23 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 
 
 [sitekit_bloginfo] is based on [bloginfo function](https://developer.wordpress.org/reference/functions/bloginfo/).
+
+
+= Parameters for [sitekit_iframe]: =
+
+* **src** - source of the iframe: `[sitekit_iframe src="http://www.youtube.com/embed/4qsGTXLnmKs"]`; by default src="http://www.youtube.com/embed/4qsGTXLnmKs";
+* **width** - width in pixels or in percents: `[sitekit_iframe width="100%"]` or `[sitekit_iframe width="600"]`; by default width="100%";
+* **height** - height in pixels: `[sitekit_iframe height="500"]`; by default height="500";
+* **scrolling** - with or without the scrollbar: `[sitekit_iframe scrolling="no"]`; by default scrolling="yes";
+* **frameborder** - with or without the frame border: `[sitekit_iframe frameborder="0"]`; by default frameborder="0";
+* **marginheight** - height of the margin: `[sitekit_iframe marginheight="0"]`; removed by default;
+* **marginwidth** - width of the margin: `[sitekit_iframe marginwidth="0"]`; removed by default;
+* **allowtransparency** - allows to set transparency of the iframe: `[sitekit_iframe allowtransparency="true"]`; removed by default;
+* **id** - allows to add the id of the iframe: `[sitekit_iframe id="custom_id"]`; removed by default;
+* **class** - allows to add the class of the iframe: `[sitekit_iframe class="custom_class"]`; by default class="iframe-class";
+* **style** - allows to add the css styles of the iframe: `[sitekit_iframe style="margin-left:-30px;"]`; removed by default;
+* **any_other_param** - allows to add new parameter of the iframe `[sitekit_iframe any_other_param="any_value"]`;
+* **any_other_empty_param** - allows to add new empty parameter of the iframe (like "allowfullscreen" on youtube) `[sitekit_iframe any_other_empty_param=""]`;
 
 
 == Changelog ==

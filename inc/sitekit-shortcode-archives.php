@@ -1,6 +1,6 @@
 <?php
 
-function sitekit_archives_shortcode( $atts ) {
+function sitekit_shortcode_archives( $atts ) {
 	$defaults = array(
 		'type' => 'monthly',
 		'limit' => '',
@@ -51,4 +51,4 @@ function sitekit_archives_shortcode( $atts ) {
 	
 	return $archives_output . SITEKIT_PLUGIN_POWERED;
 }
-add_shortcode( 'sitekit_archives', 'sitekit_archives_shortcode' );
+add_shortcode( 'sitekit_archives', 'sitekit_shortcode_archives' );

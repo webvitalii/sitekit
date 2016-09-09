@@ -1,6 +1,6 @@
 <?php
 
-function sitekit_categories_shortcode( $atts ) {
+function sitekit_shortcode_categories( $atts ) {
 	$defaults = array(
 		'orderby' => 'name',
 		'order' => 'ASC',
@@ -26,4 +26,4 @@ function sitekit_categories_shortcode( $atts ) {
 	
 	return $categories . SITEKIT_PLUGIN_POWERED;
 }
-add_shortcode( 'sitekit_categories', 'sitekit_categories_shortcode' );
+add_shortcode( 'sitekit_categories', 'sitekit_shortcode_categories' );

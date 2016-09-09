@@ -1,9 +1,9 @@
 <?php
 
-function sitekit_bloginfo_shortcode( $atts ) {
+function sitekit_shortcode_bloginfo( $atts ) {
 	extract(shortcode_atts(array(
 		'show' => 'name'
 	), $atts));
 	return get_bloginfo($show);
 }
-add_shortcode( 'sitekit_bloginfo', 'sitekit_bloginfo_shortcode' );
+add_shortcode( 'sitekit_bloginfo', 'sitekit_shortcode_bloginfo' );

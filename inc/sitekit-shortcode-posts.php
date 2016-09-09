@@ -1,6 +1,6 @@
 <?php
 
-function sitekit_posts_shortcode( $atts ) {
+function sitekit_shortcode_posts( $atts ) {
 	
 	if ( get_query_var('paged') ) {
 		$paged = get_query_var('paged');
@@ -57,4 +57,4 @@ function sitekit_posts_shortcode( $atts ) {
 	
 	return $posts_output . SITEKIT_PLUGIN_POWERED;
 }
-add_shortcode( 'sitekit_posts', 'sitekit_posts_shortcode' );
+add_shortcode( 'sitekit_posts', 'sitekit_shortcode_posts' );
