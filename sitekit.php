@@ -36,8 +36,8 @@ include( 'inc/sitekit-widget-posts.php' );
 
 
 function sitekit_enqueue_scripts() {
-	//wp_enqueue_style( 'sitekit-flexify-style', plugin_dir_url( __FILE__ ) . 'assets/flexify/css/flexify.css', array(), SITEKIT_PLUGIN_VERSION, 'all' );
-	wp_enqueue_style( 'sitekit-style', plugin_dir_url( __FILE__ ) . 'assets/css/sitekit.css', array(), SITEKIT_PLUGIN_VERSION, 'all' );
+	//wp_enqueue_style( 'sitekit-flexify-style', plugin_dir_url( __FILE__ ) . 'flexify/css/flexify.css', array(), SITEKIT_PLUGIN_VERSION, 'all' );
+	wp_enqueue_style( 'sitekit-style', plugin_dir_url( __FILE__ ) . 'css/sitekit.css', array(), SITEKIT_PLUGIN_VERSION, 'all' );
 }
 //add_action( 'wp_enqueue_scripts', 'sitekit_enqueue_scripts' );
 
@@ -90,6 +90,34 @@ ga('send', 'pageview');
 
 }
 add_action( 'wp_footer', 'sitekit_wp_footer' );
+
+
+// TinyMCE Buttons code - https://www.gavick.com/blog/wordpress-tinymce-custom-buttons
+function sitekit_add_tinymce_button() {
+	global $typenow;
+	if ( !current_user_can('edit_posts') && !current_user_can('edit_pages') ) {
+		return;
+	}
+	if( ! in_array( $typenow, array( 'post', 'page' ) ) ) {
+		return;
+	}
+	if ( get_user_option('rich_editing') == 'true') {
+		add_filter('mce_external_plugins', 'sitekit_add_tinymce_plugin');
+		add_filter('mce_buttons', 'sitekit_register_my_tc_button');
+	}
+}
+add_action('admin_head', 'sitekit_add_tinymce_button');
+
+
+function sitekit_add_tinymce_plugin($plugin_array) {
+   	$plugin_array['sitekit_tinymce_button'] = plugins_url( '/js/tinymce.js', __FILE__ );
+   	return $plugin_array;
+}
+
+function sitekit_register_my_tc_button($buttons) {
+   array_push($buttons, 'sitekit_tinymce_button');
+   return $buttons;
+}
 
 
 function sitekit_plugin_row_meta( $links, $file ) {
