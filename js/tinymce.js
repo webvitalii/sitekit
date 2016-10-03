@@ -25,10 +25,15 @@
 								name: 'height',
 								label: 'height',
 								value: '500'
+							},
+							{
+								type: 'textbox',
+								name: 'style',
+								label: 'style (CSS styles, for example: margin: 20px;)'
 							}
 						],
 						onsubmit: function(e) {
-							editor.insertContent('[sitekit_iframe src="' + e.data.src + '" width="' + e.data.width + '" height="' + e.data.height + '"]');
+							editor.insertContent('[sitekit_iframe src="' + e.data.src + '" width="' + e.data.width + '" height="' + e.data.height + '" style="' + e.data.style + '"]');
 						}
 					});
 				}
