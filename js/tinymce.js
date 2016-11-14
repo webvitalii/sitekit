@@ -32,7 +32,7 @@
 						}
 					});
 				}
-			}, {
+			}/*, {
 				text: 'Embed',
 				onclick: function() {
 					editor.windowManager.open({
@@ -57,7 +57,7 @@
 						}
 					});
 				}
-			}]
+			}*/]
         });
     });
 })();
