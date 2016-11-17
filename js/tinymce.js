@@ -4,10 +4,48 @@
             text: 'Sitekit',
             type: 'menubutton',
             menu: [{
+				text: 'Posts',
+				onclick: function() {
+					editor.windowManager.open({
+						title: 'Sitekit Posts shortcode params',
+						body: [{
+							type: 'textbox',
+							name: 'posts_per_page',
+							label: 'posts per page',
+							value: '10' // by default
+						}, {
+							type: 'listbox', // listbox | combobox
+							name: 'order',
+							label: 'order',
+							values : [
+								{ text: 'DESC', value: 'DESC' },
+								{ text: 'ASC', value: 'ASC' }
+							],
+							value: 'DESC' // by default
+						}, {
+							type: 'listbox', // listbox | combobox
+							name: 'orderby',
+							label: 'order by',
+							values : [
+								{ text: 'created date', value: 'date' },
+								{ text: 'modified date', value: 'modified' },
+								{ text: 'post title', value: 'title' },
+								{ text: 'post slug', value: 'name' },
+								{ text: 'post ID', value: 'ID' },
+								{ text: 'random', value: 'rand' }
+							],
+							value: 'date'
+						}],
+						onsubmit: function(e) {
+							editor.insertContent('[sitekit_posts posts_per_page="' + e.data.posts_per_page + '" order="' + e.data.order + '" orderby="' + e.data.orderby + '"]');
+						}
+					});
+				}
+			}, {
 				text: 'Iframe',
 				onclick: function() {
 					editor.windowManager.open({
-						title: 'Iframe shortcode params',
+						title: 'Sitekit Iframe shortcode params',
 						body: [{
 							type: 'textbox',
 							name: 'src',
