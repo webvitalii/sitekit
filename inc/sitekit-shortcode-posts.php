@@ -16,6 +16,7 @@ function sitekit_shortcode_posts( $atts ) {
 		'paged' => $paged,
 		'post_status' => 'publish',
 		'ignore_sticky_posts' => true,
+		//'cat' => 47,
 		//'category_name' => 'custom-cat',
 		'order' => 'DESC', // 'ASC'
 		'orderby' => 'date' // modified | title | name | ID | rand
@@ -23,7 +24,9 @@ function sitekit_shortcode_posts( $atts ) {
 	$atts_obj = shortcode_atts( $defaults, $atts );
 	
 	$custom_query = new WP_Query( $atts_obj );
-
+	
+	//print_r($atts);
+	
 	$posts_output = '';
 
 	if ( $custom_query->have_posts() ) :

@@ -11,33 +11,47 @@
 						body: [{
 							type: 'textbox',
 							name: 'posts_per_page',
-							label: 'posts per page',
+							label: 'Posts per page',
 							value: '10' // by default
 						}, {
 							type: 'listbox', // listbox | combobox
 							name: 'order',
-							label: 'order',
+							label: 'Order',
 							values : [
-								{ text: 'DESC', value: 'DESC' },
-								{ text: 'ASC', value: 'ASC' }
+								{ text: 'Descending', value: 'DESC' },
+								{ text: 'Ascending', value: 'ASC' }
 							],
 							value: 'DESC' // by default
 						}, {
 							type: 'listbox', // listbox | combobox
 							name: 'orderby',
-							label: 'order by',
+							label: 'Order by',
 							values : [
-								{ text: 'created date', value: 'date' },
-								{ text: 'modified date', value: 'modified' },
-								{ text: 'post title', value: 'title' },
-								{ text: 'post slug', value: 'name' },
-								{ text: 'post ID', value: 'ID' },
-								{ text: 'random', value: 'rand' }
+								{ text: 'Created date', value: 'date' },
+								{ text: 'Modified date', value: 'modified' },
+								{ text: 'Post title', value: 'title' },
+								{ text: 'Post URL slug', value: 'name' },
+								{ text: 'Post ID', value: 'ID' },
+								{ text: 'Random', value: 'rand' }
 							],
 							value: 'date'
-						}],
+						}/*, {
+							type: 'textbox',
+							name: 'cat',
+							label: 'category ID (for example: 7, 15)',
+							value: '' // by default
+						}*/],
 						onsubmit: function(e) {
-							editor.insertContent('[sitekit_posts posts_per_page="' + e.data.posts_per_page + '" order="' + e.data.order + '" orderby="' + e.data.orderby + '"]');
+							var shortcode = '';
+							
+							shortcode += '[sitekit_posts';
+							shortcode += ' posts_per_page="' + e.data.posts_per_page + '"';
+							shortcode += ' order="' + e.data.order + '"';
+							shortcode += ' orderby="' + e.data.orderby + '"';
+							//shortcode += ' cat="' + e.data.cat + '"';
+							shortcode += ']';
+							
+							editor.insertContent(shortcode);
 						}
 					});
 				}
@@ -49,21 +63,21 @@
 						body: [{
 							type: 'textbox',
 							name: 'src',
-							label: 'src (source)'
+							label: 'URL (source)'
 						}, {
 							type: 'textbox',
 							name: 'width',
-							label: 'width',
+							label: 'Width',
 							value: '100%'
 						}, {
 							type: 'textbox',
 							name: 'height',
-							label: 'height',
+							label: 'Height',
 							value: '500'
 						}, {
 							type: 'textbox',
 							name: 'style',
-							label: 'style (CSS styles, for example: margin: 20px;)'
+							label: 'Style (CSS styles, for example: margin: 20px;)'
 						}],
 						onsubmit: function(e) {
 							editor.insertContent('[sitekit_iframe src="' + e.data.src + '" width="' + e.data.width + '" height="' + e.data.height + '" style="' + e.data.style + '"]');
