@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Sitekit
-Plugin URI: http://wordpress.org/plugins/sitekit/
+Plugin URI: http://vitality.universio.net/plugins/sitekit/
 Description: Widgets: search, archives, categories, pages, posts. Shortcodes: archives, bloginfo, categories, posts.
 Version: 1.2
 Author: webvitaly
 Text Domain: sitekit
-Author URI: http://web-profile.net/wordpress/plugins/
+Author URI: http://vitality.universio.net/
 License: GPLv3
 */
 
@@ -36,7 +36,6 @@ include( 'inc/sitekit-widget-posts.php' );
 
 
 function sitekit_enqueue_scripts() {
-	//wp_enqueue_style( 'sitekit-flexify-style', plugin_dir_url( __FILE__ ) . 'flexify/css/flexify.css', array(), SITEKIT_PLUGIN_VERSION, 'all' );
 	wp_enqueue_style( 'sitekit-style', plugin_dir_url( __FILE__ ) . 'css/sitekit.css', array(), SITEKIT_PLUGIN_VERSION, 'all' );
 }
 //add_action( 'wp_enqueue_scripts', 'sitekit_enqueue_scripts' );

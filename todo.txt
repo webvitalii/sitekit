@@ -1,0 +1,15 @@
+[sitekit_pages]
+* list
+* columns - css columns
+* cards - flexbox
+
+[sitekit_posts]
+* recent posts
+* popular posts - sorted by comment count
+
+Shortcodes:
+* [sitekit_date] - https://wordpress.org/plugins/extra-shortcodes/ 
+
+========== Maybe ==========
+* [widget] authors - https://wordpress.org/plugins/widgets-reloaded/
+* [widget] rss-feed - show (checkboxes) posts rss-feed, comments rss-feed, and show category rss-feed on category page (on author page too)

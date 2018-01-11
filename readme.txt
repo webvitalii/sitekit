@@ -115,16 +115,16 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 
 == Changelog ==
 
-= 1.2 - 2016.06.07 =
+= 1.2 =
 * Added Google Analytics code setting
 * Added Show/hide google analytics code if user is logged in setting
 * Added Head code setting
 * Added Footer code setting
 
-= 1.1 - 2016.04.01 =
+= 1.1 =
 * Added pages widgets.
 
-= 1.0 - 2016.03.30 =
+= 1.0 =
 * initial release: Widgets: search, archives and categories. Shortcodes: archives, bloginfo and categories.
 
 
