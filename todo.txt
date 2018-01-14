@@ -1,15 +1,37 @@
-[sitekit_pages]
-* list
-* columns - css columns
-* cards - flexbox
+to-do:
 
-[sitekit_posts]
-* recent posts
-* popular posts - sorted by comment count
+* [sitekit_posts] child_of – displays the sub-pages of a single Page by ID: [sitekit_posts child_of="4"];
+* [sitekit_posts] sort_column – sort the list of pages by column: [sitekit_posts sort_column="menu_order"]; by default: (sort_column="menu_order, post_title"); possible values: post_title, menu_order, post_date (sort by creation time), post_modified, ID, post_author, post_name (sort by page slug);
+* [sitekit_posts] sort_order – the sort order of the list of pages (either ascending or descending): [sitekit_posts sort_order="desc"]; by default: (sort_order="asc"); possible values: asc, desc;
+* [sitekit_posts] exclude – define a comma-separated list of Page IDs to be excluded from the list: [sitekit_posts exclude="6,7,8"]; You may exclude current page: [sitekit_posts exclude="current"];
+* [sitekit_posts] show_date – display creation or last modified date next to each Page: [sitekit_posts show_date="created"]; possible values: created, modified, updated;
+* [sitekit_posts] show_image – show or hide featured image [sitekit_posts_ext show_image="0"]; by default: show_image="1″;
+* [sitekit_posts] date_format – the format of the Page date set by the show_date parameter: [sitekit_posts date_format="l, F j, Y"]; by default use the date format configured in your WordPress options;
 
-Shortcodes:
-* [sitekit_date] - https://wordpress.org/plugins/extra-shortcodes/ 
+
+========== Future ==========
+
+* [ui] remove not needed widgets and add "Sitekit Shortcode Widget" as a container for all Sitekit Shortcodes.
+* [ui] Add Shortcode builder
+* [ui] Add instant preview of the shortcode
+* [ui] Add a video tutorial with how to use Sitekit plugin
+* [sitekit_posts] show_tags
+* [sitekit_posts] show_categories
+* [sitekit_posts] template = list|thumb
+* [sitekit_posts] columns – for splitting list of pages into columns: [sitekit_posts class="sitekit-cols-2"]; available classes: sitekit-cols-2, sitekit-cols-3, sitekit-cols-4, sitekit-cols-5; columns are responsive and become 1 column at less than 768px;
+* [sitekit_posts] cards - flexbox
+* [sitekit_posts] popular posts - sorted by comment count
+* [sitekit_posts] recent posts
+* [sitekit_pages] reuse [sitekit_posts] params
+* [sitekit_date] - https://wordpress.org/plugins/extra-shortcodes/
+* [sitekit_authors] - https://wordpress.org/plugins/widgets-reloaded/
+* [sitekit_rss] - rss-feed - show (checkboxes) posts rss-feed, comments rss-feed, and show category rss-feed on category page (on author page too)
 
 ========== Maybe ==========
-* [widget] authors - https://wordpress.org/plugins/widgets-reloaded/
-* [widget] rss-feed - show (checkboxes) posts rss-feed, comments rss-feed, and show category rss-feed on category page (on author page too)
+
+========== Pro ==========
+
+* [sitekit_posts] post_type – list associated with a certain hierarchical Post Type [sitekit_posts post_type="page"]; by default: (post_type="page"); possible values: page, revision, Hierarchical Custom Post Types ("post" is not a Hierarchical Post Type);
+* [sitekit_posts] template = custom1,custom2,custom3,custom4,custom5
+* [sitekit_posts] post_type – list associated with a certain hierarchical Post Type [sitekit_posts post_type="page"]; by default: (post_type="page"); possible values: page, revision, Hierarchical Custom Post Types ("post" is not a Hierarchical Post Type);
+* [sitekit_posts] post_status – a comma-separated list of all post status types: [sitekit_posts post_status="private"]; by default: (post_status="publish"); possible values: publish, private, draft;
