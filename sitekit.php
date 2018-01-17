@@ -31,7 +31,6 @@ include( 'inc/sitekit-shortcode-iframe.php' );
 
 include( 'inc/sitekit-widget-search.php' );
 include( 'inc/sitekit-widget-archives.php' );
-include( 'inc/sitekit-widget-categories.php' );
 include( 'inc/sitekit-widget-posts.php' );
 
 
@@ -122,9 +121,9 @@ function sitekit_register_my_tc_button($buttons) {
 function sitekit_plugin_row_meta( $links, $file ) {
 	if ( $file == plugin_basename( __FILE__ ) ) {
 		$row_meta = array(
-			'support' => '<a href="http://web-profile.net/wordpress/plugins/sitekit/" target="_blank"><span class="dashicons dashicons-editor-help"></span> ' . __( 'Sitekit', 'sitekit' ) . '</a>',
-			'donate' => '<a href="http://web-profile.net/donate/" target="_blank"><span class="dashicons dashicons-heart"></span> ' . __( 'Donate', 'sitekit' ) . '</a>',
-			'pro' => '<a href="http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii" target="_blank" title="Silver Bullet Pro - Speedup and Protect WordPress in a Smart Way"><span class="dashicons dashicons-star-filled"></span> ' . __( 'Speedup and Protect WordPress', 'sitekit' ) . '</a>'
+			'support' => '<a href="http://web-profile.net/wordpress/plugins/sitekit/" target="_blank">' . __( 'Sitekit', 'sitekit' ) . '</a>',
+			'donate' => '<a href="http://web-profile.net/donate/" target="_blank">' . __( 'Donate', 'sitekit' ) . '</a>',
+			'pro' => '<a href="http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii" target="_blank" title="Silver Bullet Pro - Speedup and Protect WordPress in a Smart Way">' . __( 'Speedup and Protect WordPress', 'sitekit' ) . '</a>'
 		);
 		$links = array_merge( $links, $row_meta );
 	}
