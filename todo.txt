@@ -24,6 +24,7 @@ to-do:
 * [sitekit_posts] search = $query = new WP_Query( array( 's' => 'keyword' ) ); https://codex.wordpress.org/Class_Reference/WP_Query
 * [sitekit_pages] reuse [sitekit_posts] params
 * [sitekit_date] - https://wordpress.org/plugins/extra-shortcodes/
+* [sitekit_btn]
 
 ========== Maybe ==========
 
@@ -33,6 +34,8 @@ to-do:
 ========== Pro ==========
 
 * [sitekit_posts] post_type – list associated with a certain hierarchical Post Type [sitekit_posts post_type="page"]; by default: (post_type="page"); possible values: page, revision, Hierarchical Custom Post Types ("post" is not a Hierarchical Post Type);
-* [sitekit_posts] template = custom1,custom2,custom3,custom4,custom5
+* [sitekit_posts] template = columns
+* [sitekit_posts] template = grid - https://gridbyexample.com/patterns/
+* [sitekit_posts] template = custom1,custom2,custom3,custom4,custom5 - custom html
 * [sitekit_posts] post_type – list associated with a certain hierarchical Post Type [sitekit_posts post_type="page"]; by default: (post_type="page"); possible values: page, revision, Hierarchical Custom Post Types ("post" is not a Hierarchical Post Type);
 * [sitekit_posts] post_status – a comma-separated list of all post status types: [sitekit_posts post_status="private"]; by default: (post_status="publish"); possible values: publish, private, draft;
