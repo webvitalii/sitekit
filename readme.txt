@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.net/donate/
 Tags: widget, widgets, search, archive, archives, category, categories, pages, shortcode, shortcodes, bloginfo
 Requires at least: 4.0
-Tested up to: 5.0
-Stable tag: 1.2
+Tested up to: 6.2
+Stable tag: 1.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -12,10 +12,10 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 
 == Description ==
 
-> **[Speedup and Protect WordPress](http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii "Silver Bullet Pro - Speedup and Protect WordPress in a Smart Way")** |
-> **[Sitekit](http://web-profile.net/wordpress/plugins/sitekit/ "Plugin page")** |
-> **[Donate](http://web-profile.net/donate/ "Support the development")** |
-> **[GitHub](https://github.com/webvitalii/sitekit "Fork")**
+* **[Advanced iFrame Pro](https://1.envato.market/KdRNz "Advanced iFrame Pro")**
+* **[Sitekit](http://web-profile.net/wordpress/plugins/sitekit/ "Plugin page")**
+* **[Donate](http://web-profile.net/donate/ "Support the development")**
+* **[GitHub](https://github.com/webvitalii/sitekit "Fork")**
 
 = Settings: =
 
@@ -38,14 +38,6 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 * `[sitekit_categories]`
 * `[sitekit_bloginfo]`
 * `[sitekit_iframe]`
-
-
-[Shortcodes with params](https://wordpress.org/plugins/sitekit/other_notes/)
-
-
-= Useful: =
-* **[Silver Bullet Pro - Speedup and protect WordPress in a smart way](http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii "Speedup and protect WordPress in a smart way")**
-* **[Anti-spam Pro - Block spam in comments](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitalii "Block spam in comments")**
 
 
 == Other Notes ==
@@ -114,6 +106,9 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 
 
 == Changelog ==
+
+= 1.3 =
+* Minor cleanup.
 
 = 1.2 =
 * Added Google Analytics code setting

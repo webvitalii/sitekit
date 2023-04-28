@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Sitekit
-Plugin URI: http://vitality.universio.net/plugins/sitekit/
+Plugin URI: https://wordpress.org/plugins/sitekit/
 Description: Widgets: search, archives, categories, pages, posts. Shortcodes: archives, bloginfo, categories, posts.
-Version: 1.2
+Version: 1.3
 Author: webvitaly
 Text Domain: sitekit
-Author URI: http://vitality.universio.net/
+Author URI: http://web-profile.net/wordpress/plugins/
 License: GPLv3
 */
 
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) { // prevent full path disclosure
 	exit;
 }
 
-define('SITEKIT_PLUGIN_VERSION', '1.2');
+define('SITEKIT_PLUGIN_VERSION', '1.3');
 define('SITEKIT_PLUGIN_POWERED', "\n".'<!-- Powered by Sitekit v.'.SITEKIT_PLUGIN_VERSION.' wordpress.org/plugins/sitekit/ -->'."\n");
 
 
@@ -31,6 +31,7 @@ include( 'inc/sitekit-shortcode-iframe.php' );
 
 include( 'inc/sitekit-widget-search.php' );
 include( 'inc/sitekit-widget-archives.php' );
+include( 'inc/sitekit-widget-categories.php' );
 include( 'inc/sitekit-widget-posts.php' );
 
 
@@ -123,7 +124,7 @@ function sitekit_plugin_row_meta( $links, $file ) {
 		$row_meta = array(
 			'support' => '<a href="http://web-profile.net/wordpress/plugins/sitekit/" target="_blank">' . __( 'Sitekit', 'sitekit' ) . '</a>',
 			'donate' => '<a href="http://web-profile.net/donate/" target="_blank">' . __( 'Donate', 'sitekit' ) . '</a>',
-			'pro' => '<a href="http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii" target="_blank" title="Silver Bullet Pro - Speedup and Protect WordPress in a Smart Way">' . __( 'Speedup and Protect WordPress', 'sitekit' ) . '</a>'
+			'pro' => '<a href="https://1.envato.market/KdRNz" target="_blank" title="Advanced iFrame Pro">' . __( 'Advanced iFrame Pro', 'sitekit' ) . '</a>'
 		);
 		$links = array_merge( $links, $row_meta );
 	}
