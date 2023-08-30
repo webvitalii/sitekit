@@ -17,10 +17,17 @@ function sitekit_shortcode_iframe( $atts ) {
 
 	$html = "\n".'<iframe';
 	foreach( $atts as $attr => $value ) {
-		if ( strtolower($attr) != 'onload' AND strtolower($attr) != 'onpageshow' AND strtolower($attr) != 'onclick') { // remove some attributes
-			if ( $value != '' ) { // adding all attributes
+		// sanitize url
+		if ( strtolower($attr) == 'src' ) {
+			$value = esc_url( $value );
+		}
+		// remove some attributes
+		if ( strtolower($attr) != 'onload' AND strtolower($attr) != 'onpageshow' AND strtolower($attr) != 'onclick') {
+			if ( $value != '' ) {
+				// adding all attributes
 				$html .= ' ' . esc_attr( $attr ) . '="' . esc_attr( $value ) . '"';
-			} else { // adding empty attributes
+			} else {
+				// adding empty attributes
 				$html .= ' ' . esc_attr( $attr );
 			}
 		}
