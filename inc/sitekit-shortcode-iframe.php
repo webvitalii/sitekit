@@ -21,8 +21,8 @@ function sitekit_shortcode_iframe( $atts ) {
 		if ( strtolower($attr) == 'src' ) {
 			$value = esc_url( $value );
 		}
-		// remove some attributes
-		if ( strtolower($attr) != 'onload' AND strtolower($attr) != 'onpageshow' AND strtolower($attr) != 'onclick') {
+		// remove all attributes starting with "on". Examples: onload, onmouseover, onfocus, onpageshow, onclick
+		if ( strpos( strtolower( $attr ), 'on' ) !== 0 ) {
 			if ( $value != '' ) {
 				// adding all attributes
 				$html .= ' ' . esc_attr( $attr ) . '="' . esc_attr( $value ) . '"';

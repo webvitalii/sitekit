@@ -1,14 +1,14 @@
 === Sitekit ===
 Contributors: webvitaly
 Donate link: http://web-profile.net/donate/
-Tags: widget, widgets, search, archive, archives, category, categories, pages, shortcode, shortcodes, bloginfo
+Tags: widget, widgets, search, archive, archives, category, categories, pages, shortcode, shortcodes, bloginfo, iframe
 Requires at least: 4.0
 Tested up to: 6.3.1
-Stable tag: 1.4
+Stable tag: 1.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Widgets: search, archives and categories. Shortcodes: archives, bloginfo and categories.
+Widgets: search, archives and categories. Shortcodes: archives, bloginfo, iframe and categories.
 
 == Description ==
 
@@ -106,6 +106,9 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo and cat
 
 
 == Changelog ==
+
+= 1.5 =
+* Removed all iframe attributes starting with "on". Examples: onload, onmouseover, onfocus, onpageshow, onclick.
 
 = 1.4 =
 * Sanitize iframe URL.
