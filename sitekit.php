@@ -3,7 +3,7 @@
 Plugin Name: Sitekit
 Plugin URI: https://wordpress.org/plugins/sitekit/
 Description: Widgets: search, archives, categories, pages, posts. Shortcodes: archives, bloginfo, categories, posts.
-Version: 1.5
+Version: 1.6
 Author: webvitaly
 Text Domain: sitekit
 Author URI: http://web-profile.net/wordpress/plugins/
@@ -50,6 +50,29 @@ function sitekit_wp_head() { // output content to the head section
 		echo $code_head;
 		echo "\n".'<!-- End of Sitekit head code -->'."\n";
 	}
+
+	$ga_code = $settings['ga_code'];
+	$ga_code_hide_if_loggedin = $settings['ga_code_hide_if_loggedin'];
+
+		
+	if ( ! empty( $ga_code ) ) {
+		if( !is_user_logged_in() || ( is_user_logged_in() && !$ga_code_hide_if_loggedin ) ) {
+			?>
+<!-- Sitekit Google Analytics code -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $ga_code; ?>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '<?php echo $ga_code; ?>');
+</script>
+<!-- End of Sitekit Google Analytics code -->
+			<?php
+		}
+	}
+
 }
 add_action( 'wp_head', 'sitekit_wp_head' );
 
@@ -59,32 +82,12 @@ function sitekit_wp_footer() { // output content to the footer section
 	$settings = sitekit_get_settings();
 	$code_footer = $settings['code_footer'];
 	
-	$ga_code = $settings['ga_code'];
-	$ga_code_hide_if_loggedin = $settings['ga_code_hide_if_loggedin'];
+	
 	
 	if ( ! empty( $code_footer ) ) {
 		echo "\n".'<!-- Sitekit footer code -->'."\n";
 		echo $code_footer;
 		echo "\n".'<!-- End of Sitekit footer code -->'."\n";
-	}
-	
-	
-	if ( ! empty( $ga_code ) ) {
-		if( !is_user_logged_in() || ( is_user_logged_in() && !$ga_code_hide_if_loggedin ) ) {
-			echo "\n".'<!-- Sitekit Google Analytics code -->'."\n";
-			?>
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', '<?php echo $ga_code; ?>', 'auto');
-ga('send', 'pageview');
-</script>
-			<?php
-			echo "\n".'<!-- End of Sitekit Google Analytics code -->'."\n";
-		}
 	}
 
 }

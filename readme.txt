@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.net/donate/
 Tags: widget, widgets, search, archive, archives, category, categories, pages, shortcode, shortcodes, bloginfo, iframe
 Requires at least: 4.0
-Tested up to: 6.3.1
-Stable tag: 1.5
+Tested up to: 6.4.2
+Stable tag: 1.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -106,6 +106,9 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo, iframe
 
 
 == Changelog ==
+
+= 1.6 =
+* Updated Google Analytics with new GA4 version.
 
 = 1.5 =
 * Removed all iframe attributes starting with "on". Examples: onload, onmouseover, onfocus, onpageshow, onclick.

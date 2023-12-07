@@ -22,7 +22,7 @@ function sitekit_admin_init() {
 	add_settings_section('sitekit_settings_general_section', '', 'sitekit_section_callback', 'sitekit_general_page');
 	add_settings_section('sitekit_settings_code_section', '', 'sitekit_section_callback', 'sitekit_code_page');
 
-	add_settings_field('ga_code', __( 'Google analytics code', 'sitekit' ), 'sitekit_field_ga_code_callback', 'sitekit_general_page', 'sitekit_settings_general_section');
+	add_settings_field('ga_code', __( 'Google analytics code (GA4)', 'sitekit' ), 'sitekit_field_ga_code_callback', 'sitekit_general_page', 'sitekit_settings_general_section');
 	add_settings_field('ga_code_hide_if_loggedin', __( 'Hide Google analytics code if use is logged in', 'sitekit' ), 'sitekit_field_ga_code_hide_if_loggedin_callback', 'sitekit_general_page', 'sitekit_settings_general_section');
 	
 	add_settings_field('code_head', __( 'Head code', 'sitekit' ), 'sitekit_field_code_head_callback', 'sitekit_code_page', 'sitekit_settings_code_section');
@@ -76,7 +76,7 @@ function sitekit_field_ga_code_callback() {
 	$settings = sitekit_get_settings();
 	$default_settings = sitekit_default_settings();
 	echo '<input type="text" name="sitekit_settings[ga_code]" class="regular-text" value="'.$settings['ga_code'].'" />';
-	echo '<p class="description">Example: UA-12345678-9</p>';
+	echo '<p class="description">Example: G-LENB42R6HN</p>';
 }
 
 
