@@ -15,6 +15,11 @@ function sitekit_shortcode_iframe( $atts ) {
 		}
 	}
 
+	// Remove srcdoc attribute if it exists
+	if ( isset( $atts['srcdoc'] ) ) {
+		unset( $atts['srcdoc'] );
+	}
+
 	$html = "\n".'<iframe';
 	foreach( $atts as $attr => $value ) {
 		// sanitize url
