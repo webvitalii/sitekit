@@ -120,7 +120,7 @@ The `[sitekit_menu]` shortcode allows you to display a custom menu. It supports 
 * **after** - Text after the link markup. Default empty.
 * **link_before** - Text before the link text. Default empty.
 * **link_after** - Text after the link text. Default empty.
-* **items_wrap** - How the list items should be wrapped. Default '<ul id="%1$s" class="%2$s">%3$s</ul>'.
+* **items_wrap** - How the list items should be wrapped. Default `<ul id="%1$s" class="%2$s">%3$s</ul>`.
 * **depth** - How many levels of the hierarchy are to be included. 0 means all. Default 0. Example: `[sitekit_menu menu="primary-menu" depth="2"]`
 * **walker** - Custom walker object to use. Default empty.
 
