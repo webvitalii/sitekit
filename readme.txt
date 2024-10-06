@@ -106,13 +106,13 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo, iframe
 
 
 = Parameters for [sitekit_menu]: =
-The `[sitekit_menu]` shortcode allows you to display a custom menu anywhere in your content. It supports all the parameters of the WordPress `wp_nav_menu()` function.
+The `[sitekit_menu]` shortcode allows you to display a custom menu. It supports all the parameters of the WordPress [wp_nav_menu()](https://developer.wordpress.org/reference/functions/wp_nav_menu/) function.
 
-* **menu** - The menu that should be displayed. Accepts (matching in order) id, slug, name. Default: empty.
-* **container** - Whether to wrap the ul, and what to wrap it with. Default 'div'.
-* **container_class** - The class that is applied to the container. Default 'menu-{menu slug}-container'.
+* **menu** - The menu that should be displayed. Accepts (matching in order) id, slug, name. Default: empty. Example: `[sitekit_menu menu="main-menu"]`
+* **container** - Whether to wrap the ul, and what to wrap it with. Default 'div'. Example without a container: `[sitekit_menu menu="main-menu" container=""]`
+* **container_class** - The class that is applied to the container. Default 'menu-{menu slug}-container'. Example: `[sitekit_menu menu="main-menu" container_class="custom-container"]`
 * **container_id** - The ID that is applied to the container. Default empty.
-* **menu_class** - CSS class to use for the ul element which forms the menu. Default 'menu'.
+* **menu_class** - CSS class to use for the ul element which forms the menu. Default 'menu'.  Example: `[sitekit_menu menu="main-menu" menu_class="custom-menu"]`
 * **menu_id** - The ID that is applied to the ul element. Default empty.
 * **echo** - Whether to echo the menu or return it. Default false.
 * **fallback_cb** - If the menu doesn't exist, a callback function will fire. Default 'wp_page_menu'.
@@ -121,22 +121,8 @@ The `[sitekit_menu]` shortcode allows you to display a custom menu anywhere in y
 * **link_before** - Text before the link text. Default empty.
 * **link_after** - Text after the link text. Default empty.
 * **items_wrap** - How the list items should be wrapped. Default '<ul id="%1$s" class="%2$s">%3$s</ul>'.
-* **depth** - How many levels of the hierarchy are to be included. 0 means all. Default 0.
+* **depth** - How many levels of the hierarchy are to be included. 0 means all. Default 0. Example: `[sitekit_menu menu="primary-menu" depth="2"]`
 * **walker** - Custom walker object to use. Default empty.
-
-Examples:
-
-1. Basic usage:
-   `[sitekit_menu menu="main-menu"]`
-
-2. With custom classes:
-   `[sitekit_menu menu="main-menu" container_class="custom-container" menu_class="custom-menu"]`
-
-3. Without a container:
-   `[sitekit_menu menu="footer-menu" container=""]`
-
-4. Limiting depth:
-   `[sitekit_menu menu="primary-menu" depth="2"]`
 
 
 == Changelog ==
