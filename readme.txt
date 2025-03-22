@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.net/donate/
 Tags: widget, widgets, search, archive, archives, category, categories, pages, shortcode, shortcodes, bloginfo, iframe
 Requires at least: 4.0
-Tested up to: 6.6.2
-Stable tag: 1.8
+Tested up to: 6.7.2
+Stable tag: 1.9
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -12,7 +12,6 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo, iframe
 
 == Description ==
 
-* **[Advanced iFrame Pro](https://1.envato.market/KdRNz "Advanced iFrame Pro")**
 * **[Sitekit](http://web-profile.net/wordpress/plugins/sitekit/ "Plugin page")**
 * **[Donate](http://web-profile.net/donate/ "Support the development")**
 * **[GitHub](https://github.com/webvitalii/sitekit "Fork")**
@@ -126,6 +125,9 @@ The `[sitekit_menu]` shortcode allows you to display a custom menu. It supports 
 
 
 == Changelog ==
+
+= 1.9 =
+* Sanitized [sitekit_menu] shortcode params.
 
 = 1.8 =
 * Added [sitekit_menu] shortcode.

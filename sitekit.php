@@ -3,7 +3,7 @@
 Plugin Name: Sitekit
 Plugin URI: https://wordpress.org/plugins/sitekit/
 Description: Widgets: search, archives, categories, pages, posts. Shortcodes: archives, bloginfo, categories, posts, custom menu.
-Version: 1.8
+Version: 1.9
 Author: webvitaly
 Text Domain: sitekit
 Author URI: http://web-profile.net/wordpress/plugins/
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) { // prevent full path disclosure
 	exit;
 }
 
-define('SITEKIT_PLUGIN_VERSION', '1.8');
+define('SITEKIT_PLUGIN_VERSION', '1.9');
 define('SITEKIT_PLUGIN_POWERED', "\n".'<!-- Powered by Sitekit v.'.SITEKIT_PLUGIN_VERSION.' https://wordpress.org/plugins/sitekit/ -->'."\n");
 
 
