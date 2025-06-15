@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.net/donate/
 Tags: widget, widgets, search, archive, archives, category, categories, pages, shortcode, shortcodes, bloginfo, iframe
 Requires at least: 4.0
-Tested up to: 6.7.2
-Stable tag: 1.9
+Tested up to: 6.8.1
+Stable tag: 2.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 

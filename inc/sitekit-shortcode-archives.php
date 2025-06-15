@@ -13,6 +13,36 @@ function sitekit_shortcode_archives( $atts ) {
 	);
 	$atts_obj = shortcode_atts( $defaults, $atts );
 	
+	// Sanitize and validate all input parameters to prevent XSS attacks and other security issues
+	
+	// Sanitize text output parameters
+	$atts_obj['before'] = esc_html($atts_obj['before']);
+	$atts_obj['after'] = esc_html($atts_obj['after']);
+	
+	// Validate type parameter against allowed values
+	$allowed_types = array('yearly', 'monthly', 'daily', 'weekly', 'postbypost', 'alpha');
+	if (!in_array($atts_obj['type'], $allowed_types)) {
+		$atts_obj['type'] = 'monthly'; // Default to monthly if invalid
+	}
+	
+	// Validate format parameter against allowed values
+	$allowed_formats = array('html', 'option', 'link');
+	if (!in_array($atts_obj['format'], $allowed_formats)) {
+		$atts_obj['format'] = 'html'; // Default to html if invalid
+	}
+	
+	// Ensure limit is numeric
+	if ($atts_obj['limit'] !== '') {
+		$atts_obj['limit'] = absint($atts_obj['limit']);
+	}
+	
+	// Ensure show_post_count and echo are boolean-like (0 or 1)
+	$atts_obj['show_post_count'] = $atts_obj['show_post_count'] ? 1 : 0;
+	$atts_obj['echo'] = $atts_obj['echo'] ? 1 : 0;
+	
+	// Validate order parameter
+	$atts_obj['order'] = strtoupper($atts_obj['order']) === 'ASC' ? 'ASC' : 'DESC';
+	
 	$archives = wp_get_archives( $atts_obj );
 	
 	if ( $atts_obj['format'] == 'option' ) { // Archives as a dropdown
